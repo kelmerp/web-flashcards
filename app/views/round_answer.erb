@@ -1,6 +1,7 @@
 <div class="container">
   <h1><%= @deck.name %></h1>
   <section class="card">
+      <p><%= @card.answer %></p>
       <p><%= @card.question %></p>
   </section>
 
@@ -10,6 +11,11 @@
       <input type="text" size="39" name="guess" placeholder=" Enter your guess here"/>
       <input type="submit" value="Guess!">
     </form>
+  </section>
+
+  <section class="result">
+    <p>Result of your guess!</p>
+    <a href="/round/deck/<%= @deck.id %>/question">Next Card</a>
   </section>
 
   <section class="round_progress">
