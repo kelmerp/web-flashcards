@@ -1,0 +1,24 @@
+<div class="container">
+  <h1><%= @deck.name %></h1>
+  <section class="card">
+      <p>ANSWER</p>
+      <p>This is an example question that has an answer and you can see the answer above</p>
+  </section>
+
+  <section class="guess">
+    <form action="/round/deck/<%= @deck.id %>" method="post">
+      <label for="guess"></label>
+      <input type="text" size="39" name="guess" placeholder=" Enter your guess here"/>
+      <input type="submit" value="Guess!">
+    </form>
+  </section>
+
+  <section class="result">
+    <p>Result of your guess!</p>
+    <a href="">Next Card</a>
+  </section>
+
+  <section class="round_progress">
+    <p>3/10 correct</p>
+  </section>
+</div>
