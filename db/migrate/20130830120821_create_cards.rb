@@ -1,7 +1,7 @@
 class CreateCards < ActiveRecord::Migration
   def change
-    create_deck :cards do |t|
-      t.string :question
+    create_table :cards do |t|
+      t.text :question
       t.string :answer
 
       t.timestamps
