@@ -14,3 +14,10 @@ post '/login' do
 
   redirect to "/user/#{@user.id}"
 end
+
+get '/user/:id' do
+  @decks = Deck.all
+  @user = current_user
+
+  erb :user
+end
