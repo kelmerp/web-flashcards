@@ -1,7 +1,7 @@
 <div class="user">
   <h3>Pick a deck you'd like to play!</h3>
   <% @decks.each do |deck| %>
-    <a href="/deck/<%= deck.id %>"><%= deck.name %></a>
+    <a href="/round/deck/<%= deck.id %>/begin"><%= deck.name %></a>
   <% end %>
 
   <table>
