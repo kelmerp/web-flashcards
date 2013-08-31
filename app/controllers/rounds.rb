@@ -21,7 +21,7 @@ get '/round/deck/:deck_id/card/:card_id/question' do
   @number_attempted = @guesses.size
   @number_correct = @guesses.select {|guess| guess.status == "correct"}.size
   if @card == nil
-    erb :results
+    redirect '/round/results'
   else
     erb :round
   end
@@ -34,6 +34,13 @@ get '/round/deck/:deck_id/card/:card_id/answer' do
   @number_attempted = @guesses.size
   @number_correct = @guesses.select {|guess| guess.status == "correct"}.size
   erb :round_answer 
+end
+
+get '/round/results' do
+  @total_cards = Round.find(session[:current_round_id]).deck.cards.size
+  @correct_first_try = Guess.correct_first_try(session[:currrent_round_id])
+
+  erb :results 
 end
 
 #POST==========================================================================================
