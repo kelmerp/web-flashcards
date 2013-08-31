@@ -1,9 +1,28 @@
 <div class="deck-list">
+  <h3>Pick a deck you'd like to play!</h3>
   <% @decks.each do |deck| %>
     <a href="/deck/<%= deck.id %>"><%= deck.name %></a>
-  <%end%>
+  <% end %>
 </div>  <!-- deck-list -->
-
+  <table>
+    <tr>
+      <th>Round ID</th>
+      <th>Deck Name</th>
+      <th>Number of Guesses</th>
+      <th>Number Correct</th>
+      <th>Number Incorrect</th>
+    </tr>
+    <tr>
+      <% current_user.rounds.each do |round| %>
+        <td><%= round.id %></td>
+        <td><%= round.deck.name %></td>
+        <% round_guesses = Guess.where(round_id: round.id) %>
+        <td><%= round_guesses.size %></td>
+        <td><%= round_guesses.select {|guess| guess.status == "correct"}.size %></td>
+        <td><%= round_guesses.select {|guess| guess.status == "incorrect"}.size %></td>
+      <% end %>
+    </tr>
+  </table>
 <div class="user-stats">
   
 </div>  <!-- user-stats -->

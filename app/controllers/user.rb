@@ -1,3 +1,12 @@
+########## GET ROUTES ##########
+get '/user/:id' do
+  @decks = Deck.all
+  # @user = current_user
+
+  erb :user
+end
+
+########## POST ROUTES ##########
 post '/login' do
   puts "Params is #{params.inspect}"
   @user = User.find_by_email(params[:user][:email])
@@ -15,9 +24,8 @@ post '/login' do
   redirect to "/user/#{@user.id}"
 end
 
-get '/user/:id' do
-  @decks = Deck.all
-  @user = current_user
+get '/logout' do
+  session.clear
 
-  erb :user
+  redirect to "/"
 end

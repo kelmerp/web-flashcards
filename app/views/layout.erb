@@ -19,9 +19,11 @@
 </head>
 <body>
   <div class="header">
-    Welcome to Princess Ruby Flashcards!!!
+    <h2> Welcome to Princess Ruby Flashcards!!! </h2>
     <a href="/">home</a>
-    <a href="/logout">logout</a>
+    <% if logged_in? %>
+      <a href="/logout">logout</a>
+    <% end %>
   </div>
   <%= yield %>
 </body>
