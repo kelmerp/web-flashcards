@@ -4,7 +4,7 @@
     <label>email <input type="text" name="user[email]"></label><br>
     <label>password <input type="password" name="user[password]"></label>
     <input type="submit"><br>
-    <% if @errors %>
+    <% if @login_errors %>
       <span class="errors"><%= @errors %></span>
     <% end %>
   </form>
@@ -18,5 +18,8 @@
     <label>password <input type="password" name="user[password]"></label><br>
     <label>confirm password <input type="password" name="user[password_confirmation]"></label>
     <input type="submit">
+    <% if @create_error %>
+      <span class="errors"><%= @errors %></span>
+    <% end %>
   </form>
 </div>

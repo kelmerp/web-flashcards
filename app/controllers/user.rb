@@ -6,26 +6,34 @@ get '/user/:id' do
   erb :user
 end
 
+get '/logout' do
+  session.clear
+
+  redirect to "/"
+end
+
 ########## POST ROUTES ##########
 post '/login' do
-  puts "Params is #{params.inspect}"
   @user = User.find_by_email(params[:user][:email])
-  puts "User is #{@user.inspect}"
 
   if @user && @user.authenticate(params[:user][:password])
     session[:user_id] = @user.id
-    puts "YAY!!!!"
   else
-    @errors = "Invalid username or password"
-    puts "NAYYY!"
+    @login_errors = "Invalid email address or password"
     erb :index
   end
 
   redirect to "/user/#{@user.id}"
 end
 
-get '/logout' do
-  session.clear
+post '/create' do
+  user = User.create(params[:user])
+  if user
+    session[:user_id] = @user.id
+  else
+    @create_error = "That email already exists, please try again."
+    erb :index
+  end
 
-  redirect to "/"
+  erb :index
 end
