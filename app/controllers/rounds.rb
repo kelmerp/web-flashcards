@@ -1,8 +1,8 @@
 #GET===========================================================================================
 
 get '/round/deck/:deck_id/begin' do
-  #@round = Round.create(:deck_id => params[:deck_id], :user_id => session[:user_id])
-  @round = Round.create(:deck_id => 3, :user_id => 4)
+  @round = Round.create(:deck_id => params[:deck_id], :user_id => session[:user_id])
+  # @round = Round.create(:deck_id => 3, :user_id => 4)
   
   session[:current_round_id] = @round.id 
   @deck = @round.deck

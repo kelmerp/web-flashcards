@@ -20,6 +20,7 @@
 <body>
   <div class="header">
     <h2> Welcome to Princess Ruby Flashcards!!! </h2>
+    <p>hi <%= current_user.first_name if current_user %>!</p>
     <a href="/">home</a>
     <% if logged_in? %>
       <a href="/logout">logout</a>

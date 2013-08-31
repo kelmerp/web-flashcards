@@ -1,7 +1,6 @@
 ########## GET ROUTES ##########
 get '/user/:id' do
   @decks = Deck.all
-  # @user = current_user
 
   erb :user
 end
@@ -10,6 +9,11 @@ get '/logout' do
   session.clear
 
   redirect to "/"
+end
+
+get '/user/edit/:id' do
+
+  erb :edit_user
 end
 
 ########## POST ROUTES ##########
@@ -22,7 +26,6 @@ post '/login' do
     redirect to "/user/#{@user.id}"
 
   else
-    p "I'm else"
     @login_errors = "Princess Ruby is Sad now.  You have entered\
     and invalid email address or password"
     erb :index
@@ -41,4 +44,14 @@ post '/create' do
   end
 
   redirect to "/user/#{current_user.id}"
+end
+
+post '/update' do
+  if current_user.update_attributes(params[:user])
+    redirect to "/user/#{current_user.id}"
+  else
+    @update_errors = "Princess Ruby is sad.  You must fill out the entire form\
+     and enter a valid email and matching password."
+    erb :edit_user
+  end
 end
