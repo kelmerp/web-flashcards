@@ -19,7 +19,8 @@ post '/login' do
   if @user && @user.authenticate(params[:user][:password])
     session[:user_id] = @user.id
   else
-    @login_errors = "Invalid email address or password"
+    @login_errors = "Princess Ruby is Sad now.  You have entered\
+    and invalid email address or password"
     erb :index
   end
 
@@ -27,11 +28,13 @@ post '/login' do
 end
 
 post '/create' do
-  user = User.create(params[:user])
+  user = User.new(params[:user])
+  user = user.save
   if user
     session[:user_id] = @user.id
   else
-    @create_error = "That email already exists, please try again."
+    @create_errors = "Princess Ruby is sad.  You must fill out the entire form\
+     and enter a valid email and matching password."
     erb :index
   end
 
