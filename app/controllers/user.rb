@@ -31,7 +31,7 @@ post '/create' do
   user = User.new(params[:user])
   user = user.save
   if user
-    session[:user_id] = @user.id
+    session[:user_id] = user.id
   else
     @create_errors = "Princess Ruby is sad.  You must fill out the entire form\
      and enter a valid email and matching password."
