@@ -1,0 +1,12 @@
+<div class="deck-list">
+  <% @decks.each do |deck| %>
+    <a href="/deck/<%= deck.id %>"><%= deck.name %></a>
+  <%end%>
+</div>  <!-- deck-list -->
+
+<div class="user-stats">
+  
+</div>  <!-- user-stats -->
+
+<a href="/user/<%= current_user.id %>">edit profile</a>
+<a href="/deck/new">create new deck</a>

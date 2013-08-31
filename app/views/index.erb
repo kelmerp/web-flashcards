@@ -1,12 +1,17 @@
 <div class="container">
   <form action="/login" method="POST">
+    <h3> Login </h3>
     <label>email <input type="text" name="user[email]"></label><br>
     <label>password <input type="password" name="user[password]"></label>
-    <input type="submit">
+    <input type="submit"><br>
+    <% if @errors %>
+      <span class="errors"><%= @errors %></span>
+    <% end %>
   </form>
 <br>
 <br>
   <form action="/create" method="POST">
+    <h3> Create account </h3>
     <label>first name <input type="text" name="user[first_name]"></label><br>
     <label>last name <input type="text" name="user[last_name]"></label><br>
     <label>email <input type="text" name="user[email]"></label><br>
