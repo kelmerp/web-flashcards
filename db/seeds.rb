@@ -19,3 +19,10 @@ end
 
 User.first.decks << deck
 User.last.decks << deck2
+
+deck3 = Deck.create!(:name => "Test Deck")
+
+deck3.cards << Card.create!(:answer => "A", :question => "What is the first letter of the alphabet?")
+deck3.cards << Card.create!(:answer => "B", :question => "What is the second letter of the alphabet?")
+deck3.cards << Card.create!(:answer => "C", :question => "What is the third letter of the alphabet?")
+

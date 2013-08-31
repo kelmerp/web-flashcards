@@ -21,7 +21,7 @@ get '/round/deck/:deck_id/card/:card_id/question' do
   @number_attempted = @guesses.size
   @number_correct = @guesses.select {|guess| guess.status == "correct"}.size
   if @card == nil
-    erb :results
+    redirect '/round/results'
   else
     erb :round
   end
@@ -36,11 +36,18 @@ get '/round/deck/:deck_id/card/:card_id/answer' do
   erb :round_answer 
 end
 
+get '/round/results' do
+  @total_cards = Round.find(session[:current_round_id]).deck.cards.size
+  @correct_first_try = Guess.correct_first_try(session[:current_round_id])
+  @incorrect_cards = Round.find(session[:current_round_id]).find_incorrect_cards 
+  erb :results 
+end
+
 #POST==========================================================================================
 
 post '/guess/:deck_id/:card_id' do
   card = Card.find(params[:card_id])
-  if params[:guess] == card.answer
+  if params[:guess].downcase == card.answer.downcase
     card.guesses << Guess.create(:status => "correct",:round_id => session[:current_round_id])
   else
     card.guesses << Guess.create(:status => "incorrect",:round_id => session[:current_round_id])
