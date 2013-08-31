@@ -22,3 +22,18 @@ th {
   margin: auto;
   width:75%;
 }
+
+body {
+  background-color: #F3B6CF;
+}
+
+@font-face
+{
+font-family: Princess;
+src: url('Jellyka Western Princess.ttf'),
+}
+
+div.header h2 {
+  font-family: Princess;
+}
+
