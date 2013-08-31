@@ -1,9 +1,16 @@
 <div class="container">
   <h1><%= @deck.name %></h1>
-  <section class="card">
-      <p><%= @card.answer %></p>
-      <p><%= @card.question %></p>
-  </section>
+  
+  <div class="flip"> 
+    <div class="card"> 
+      <div class="face front"> 
+        <p><%= @card.question %></p>
+      </div> 
+      <div class="face back"> 
+        <%= @card.answer %>
+      </div> 
+    </div> 
+  </div> 
 
   <section class="result">
     <% if @card.guesses.last.status == "correct" %>
