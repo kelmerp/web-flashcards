@@ -5,20 +5,16 @@
       <p><%= @card.question %></p>
   </section>
 
-  <section class="guess">
-    <form action="/round/deck/<%= @deck.id %>" method="post">
-      <label for="guess"></label>
-      <input type="text" size="39" name="guess" placeholder=" Enter your guess here"/>
-      <input type="submit" value="Guess!">
-    </form>
-  </section>
-
   <section class="result">
-    <p>Result of your guess!</p>
-    <a href="/round/deck/<%= @deck.id %>/question">Next Card</a>
+    <% if @card.guesses.last.status == "correct" %>
+    <p><%= "Congratulations Princess, you got it!" %></p>
+    <% else %>
+    <p><%= "Boo hoo, you suck!" %></p>
+    <% end %>
+    <a href="/round/deck/<%= @deck.id %>/card/<%= @card.id %>/question">Next Card</a>
   </section>
 
   <section class="round_progress">
-    <p>3/10 correct</p>
+    <p><%= @number_correct %> / <%= @number_attempted %> correct</p>
   </section>
 </div>

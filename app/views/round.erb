@@ -5,7 +5,7 @@
   </section>
 
   <section class="guess">
-    <form action="/round/deck/<%= @deck.id %>" method="post">
+    <form action="/guess/<%= @deck.id %>/<%= @card.id %>" method="post">
       <label for="guess"></label>
       <input type="text" size="39" name="guess" placeholder=" Enter your guess here"/>
       <input type="submit" value="Guess!">
@@ -13,6 +13,6 @@
   </section>
 
   <section class="round_progress">
-    <p>3/10 correct</p>
+    <p><%= @number_correct %> / <%= @number_attempted %> correct</p>
   </section>
 </div>
