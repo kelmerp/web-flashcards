@@ -39,7 +39,9 @@ end
 get '/round/results' do
   @total_cards = Round.find(session[:current_round_id]).deck.cards.size
   @correct_first_try = Guess.correct_first_try(session[:current_round_id])
-  @incorrect_cards = Round.find(session[:current_round_id]).find_incorrect_cards 
+  @incorrect_cards = Round.find(session[:current_round_id]).find_incorrect_cards
+  @percentage =  (@correct_first_try / @total_cards.to_f) * 100
+  @letter_grade = Round.calc_letter_grade(@percentage)
   erb :results 
 end
 
