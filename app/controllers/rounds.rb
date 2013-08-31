@@ -38,8 +38,8 @@ end
 
 get '/round/results' do
   @total_cards = Round.find(session[:current_round_id]).deck.cards.size
-  @correct_first_try = Guess.correct_first_try(session[:currrent_round_id])
-
+  @correct_first_try = Guess.correct_first_try(session[:current_round_id])
+  @incorrect_cards = Round.find(session[:current_round_id]).find_incorrect_cards 
   erb :results 
 end
 
@@ -47,7 +47,7 @@ end
 
 post '/guess/:deck_id/:card_id' do
   card = Card.find(params[:card_id])
-  if params[:guess] == card.answer
+  if params[:guess].downcase == card.answer.downcase
     card.guesses << Guess.create(:status => "correct",:round_id => session[:current_round_id])
   else
     card.guesses << Guess.create(:status => "incorrect",:round_id => session[:current_round_id])
