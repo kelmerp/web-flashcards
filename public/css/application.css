@@ -2,7 +2,7 @@
   margin: 20px auto;
   width: 600px;
   padding: 0px 20px 20px 20px;
-  border: 1px dotted black;
+  /*border: 1px dotted black;*/
 }
 th {
   text-align: left;
@@ -21,4 +21,31 @@ th {
 .guess {
   margin: auto;
   width:75%;
+}
+
+body {
+  background-color: #C8C8A9;
+  font-family: princessFont;
+}
+
+
+@font-face
+{
+  font-family: princessFont;
+  src: url('Jellyka_Western_Princess.ttf');
+}
+
+.header {
+  text-align: center;
+  background-color: #F9CDAD;
+  padding-top: 10px;
+}
+
+.header h2{
+  margin-top: 0;
+}
+
+input {
+  border-radius: 5px;
+  padding: 2px;
 }
