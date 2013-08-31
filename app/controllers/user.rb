@@ -28,9 +28,8 @@ post '/login' do
 end
 
 post '/create' do
-  user = User.new(params[:user])
-  user = user.save
-  if user
+  user = User.create(params[:user])
+  if user.valid?
     session[:user_id] = user.id
   else
     @create_errors = "Princess Ruby is sad.  You must fill out the entire form\
@@ -38,5 +37,5 @@ post '/create' do
     erb :index
   end
 
-  erb :index
+  redirect to "/user/#{current_user.id}"
 end
