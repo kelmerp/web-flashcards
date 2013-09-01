@@ -13,7 +13,7 @@ class Round < ActiveRecord::Base
     when 60..70
       "D"
     when 0..60
-      "FAIL"
+      "F"
     else
       "You did something wrong."
     end

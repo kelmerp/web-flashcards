@@ -14,9 +14,9 @@
 
   <section class="result">
     <% if @card.guesses.last.status == "correct" %>
-    <p><%= "Congratulations Princess, you got it!" %></p>
+    <p><%= Guess.get_correct_response %></p>
     <% else %>
-    <p><%= "Boo hoo, you suck!" %></p>
+    <p><%= Guess.get_incorrect_response %></p>
     <% end %>
     <a id="next-card" href="/round/deck/<%= @deck.id %>/card/<%= @card.id %>/question">Next Card</a>
   </section>
