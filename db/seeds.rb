@@ -26,3 +26,8 @@ deck3.cards << Card.create!(:answer => "A", :question => "What is the first lett
 deck3.cards << Card.create!(:answer => "B", :question => "What is the second letter of the alphabet?")
 deck3.cards << Card.create!(:answer => "C", :question => "What is the third letter of the alphabet?")
 
+deck4= Deck.create!(:name => "Sublime Text Shortcuts")
+
+CSV.foreach("./db/sublime_shortcuts.csv", :headers => true) do |row|
+  deck4.cards << Card.create!(:answer => row["Keypress"], :question => row["Command"])
+end

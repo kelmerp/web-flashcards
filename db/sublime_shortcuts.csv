@@ -1,0 +1,47 @@
+Keypress,Command
+Command + X,Delete line
+Command + Enter,Insert line after
+Command + Shift + Enter,Insert line before
+Command + Control + Up-Arrow,Move line/selection up
+Command + Control + Down-Arrow,Move line/selection down
+Command + L,Select line - Repeat to select next lines
+Command + D,Select word - Repeat select others occurrences
+Control + M,Jump to closing parentheses Repeat to jump to opening parentheses
+Control + Shift + M,Select all contents of the current parentheses
+"Command + K, Command + K",Delete from cursor to end of line
+Command + K + Delete,Delete from cursor to start of line
+Command + ],Indent current line(s)
+Command + [,Un-indent current line(s)
+Command + Shift + D,Duplicate line(s)
+Command + J,Join line below to the end of the current line
+Command + /,Comment/un-comment current line
+Command + Option + /,Block comment current selection
+Command + Y,"Redo, or repeat last keyboard shortcut command"
+Command + Shift + V,Paste and indent correctly
+Control + Space,Select next auto-complete suggestion
+Control + U,Soft undo; jumps to your last change before undoing change when repeated
+Control + Shift + Up,Column selection up
+Control + Shift + Down,Column selection down
+Command + P,Quick-open files by name
+Command + R,Goto symbol
+Control + G,Goto line in current file
+Command + Shift + P,Command prompt
+"Command + K, Command + B",Toggle side bar
+Control + Shift + P,Show scope in status bar
+Command + F,Find
+Command + Option + F,Replace
+Command + Shift + F,Find in files
+Command + Shift + t,Open last closed tab
+Control + Tab,Cycle up through tabs
+Shift + Control + Tab,Cycle down through tabs
+Command + Option + 2,Split view into two columns
+Command + Option + 1,Revert view to single column
+Command + Option + 5,Set view to grid (4 groups)
+Control + [NUM],Jump to group where num is 1-4
+Control + Shift + [NUM],Move file to specified group where num is 1-4
+Command + F2,Toggle bookmark
+F2,Next bookmark
+Shift + F2,Previous bookmark
+Shift + Command + F2,Clear bookmarks
+"Command + K, Command + U",Transform to Uppercase
+"Command + K, Command + L",Transform to Lowercase
