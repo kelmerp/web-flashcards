@@ -19,9 +19,12 @@
 </head>
 <body>
   <div class="header">
-    <h2> Welcome to Princess Ruby Flashcards!!! </h2>
-    <p>hi <%= current_user.first_name if current_user %>!</p>
-    <a href="/">home</a>
+    <div id="princess"></div>
+    <a href="/"><h2>Princess Flashcards</h2></a>
+    <div id="princess"></div>
+    <% if current_user %>
+      <p id="current-user"><%="Hi #{current_user.first_name}!"%></p>
+    <% end %>
     <% if logged_in? %>
       <a href="/logout">logout</a>
     <% end %>

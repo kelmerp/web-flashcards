@@ -1,12 +1,14 @@
-<form action="/update" method="POST">
-    <h3> Edit account </h3>
-    <label>first name <input type="text" name="user[first_name]"></label><br>
-    <label>last name <input type="text" name="user[last_name]"></label><br>
-    <label>email <input type="text" name="user[email]"></label><br>
-    <label>password <input type="password" name="user[password]"></label><br>
-    <label>confirm password <input type="password" name="user[password_confirmation]"></label>
-    <input type="submit">
-    <% if @update_errors %>
-      <br /><span class="errors"><%= @update_errors %></span>
-    <% end %>
-</form>
+<div class="container">
+  <form action="/update" method="POST">
+      <h3> Edit account </h3>
+      <label>first name <input type="text" name="user[first_name]"></label><br>
+      <label>last name <input type="text" name="user[last_name]"></label><br>
+      <label>email <input type="text" name="user[email]"></label><br>
+      <label>password <input type="password" name="user[password]"></label><br>
+      <label>confirm password <input type="password" name="user[password_confirmation]"></label>
+      <input type="submit">
+      <% if @update_errors %>
+        <br /><span class="errors"><%= @update_errors %></span>
+      <% end %>
+  </form>
+</div>

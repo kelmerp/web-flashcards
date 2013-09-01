@@ -1,17 +1,16 @@
-<header>
-<h1>You earned the following grade:</h1>	
-</header>
-<section class="grade">
-  <p><%= @letter_grade %></p>
-</section>
+<div class="container">
+  <section class="grade">
+    <p><%= @letter_grade %></p>
+  </section>
 
-<section class="first_correct">
-  <p><%=@correct_first_try%>/<%=@total_cards%> cards guessed correctly on the first try</p>
-</section>
-<section class="list">
-  <ul><p>You you need to work on this shit:</p>
-    <% @incorrect_cards.each do |card| %>
-      <li><%= card.answer %> : <%= card.question %></li>
-    <% end %>
-  </ul>
-</section>
+  <section class="first_correct">
+    <p><%=@correct_first_try%>/<%=@total_cards%> cards guessed correctly on the first try</p>
+  </section>
+  <section class="list">
+    <ul><p>You you need to work on this shit:</p>
+      <% @incorrect_cards.each do |card| %>
+        <li><%= card.answer %> : <%= card.question %></li>
+      <% end %>
+    </ul>
+  </section>
+</div>
