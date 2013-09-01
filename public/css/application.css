@@ -8,8 +8,31 @@
   border: 10px solid #FF8C94;
   border-radius: 3px;
 }
-th td {
+
+table {
+  margin-top: 20px;
+}
+
+th {
   text-align: center;
+  width: 150px;
+}
+
+td {
+  text-align: center;
+}
+
+#logout {
+  position: absolute;
+  display: block;
+  top: 65px;
+  right:20px;
+  padding: 5px;
+  border-radius: 3px;
+  background-color: #FFE2E4;
+  border: 2px solid #FF8C94;
+  font-size: 1.2em;
+  color: #FF8C94;
 }
 
 #guess {
