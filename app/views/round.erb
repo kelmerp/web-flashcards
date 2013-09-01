@@ -1,5 +1,5 @@
 <div class="container">
-  <h1><%= @deck.name %></h1>
+  <h1 class="deck_name"><%= @deck.name %></h1>
   
   <div class="flip"> 
     <div class="card"> 
@@ -15,8 +15,8 @@
   <section class="guess">
     <form id="card_guess" action="/guess/<%= @deck.id %>/<%= @card.id %>" method="post">
       <label for="guess"></label>
-      <input type="text" size="39" name="guess" placeholder=" Enter your guess here"/>
-      <input id="submit_button" type="submit" value="Guess!">
+      <input id="guess" type="text" size="39" name="guess" placeholder=" Enter your guess here"/>
+      <input class="button" type="submit" value="Guess!">
     </form>
   </section>
 

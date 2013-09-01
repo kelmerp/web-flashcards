@@ -1,29 +1,30 @@
-<div class="user">
-  <div class="user-stats">
-    
-    <a href="/user/edit/<%= current_user.id %>">edit profile</a>
-    <a href="/deck/new">create new deck</a>
-  </div>  <!-- user-stats -->
-  <h3>Pick a deck you'd like to play!</h3>
-  <% @decks.each do |deck| %>
-    <a href="/round/deck/<%= deck.id %>/begin"><%= deck.name %></a>
-  <% end %>
-  <table>
-    <tr>
-      <th>Deck Name</th>
-      <th>Number of Guesses</th>
-      <th>Number Correct</th>
-      <th>Number Incorrect</th>
-    </tr>
-    <tr>
-      <% current_user.rounds.each do |round| %>
-        <td><%= round.deck.name %></td>
-        <% round_guesses = Guess.where(round_id: round.id) %>
-        <td><%= round_guesses.size %></td>
-        <td><%= round_guesses.select {|guess| guess.status == "correct"}.size %></td>
-        <td><%= round_guesses.select {|guess| guess.status == "incorrect"}.size %></td>
-      <% end %>
-    </tr>
-  </table>
-</div>  <!-- user -->
-
+<div class="container">  
+  <div class="user">
+    <div class="user-stats">
+      
+      <a href="/user/edit/<%= current_user.id %>">edit profile</a>
+      <a href="/deck/new">create new deck</a>
+    </div>  <!-- user-stats -->
+    <h3>Pick a deck you'd like to play!</h3>
+    <% @decks.each do |deck| %>
+      <a href="/round/deck/<%= deck.id %>/begin"><%= deck.name %></a>
+    <% end %>
+    <table>
+      <tr>
+        <th>Deck Name</th>
+        <th>Number of Guesses</th>
+        <th>Number Correct</th>
+        <th>Number Incorrect</th>
+      </tr>
+      <tr>
+        <% current_user.rounds.each do |round| %>
+          <td><%= round.deck.name %></td>
+          <% round_guesses = Guess.where(round_id: round.id) %>
+          <td><%= round_guesses.size %></td>
+          <td><%= round_guesses.select {|guess| guess.status == "correct"}.size %></td>
+          <td><%= round_guesses.select {|guess| guess.status == "incorrect"}.size %></td>
+        <% end %>
+      </tr>
+    </table>
+  </div>  <!-- user -->
+</div>

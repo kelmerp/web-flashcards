@@ -1,15 +1,32 @@
 .container {
-  margin: 10% auto;
+  margin: 40px auto;
   width: 60%;
   padding: 0px 20px 20px 20px;
   height: inherit;
   /*border: 1px dotted black;*/
   background-color: #A8E6CE;
-  border: 15px solid #FF8C94;
+  border: 10px solid #FF8C94;
   border-radius: 3px;
 }
 th td {
   text-align: center;
+}
+
+#guess {
+  width: 422px;
+  font-size: 1.5em;
+}
+
+.button {
+  background-color: #FF8C94;
+  color: #FFE2E4;
+  font-size: 1.5em;
+}
+
+#card_guess {
+  margin: auto;
+  padding: 0;
+  width: 500px;
 }
 
 .guess {
@@ -17,31 +34,59 @@ th td {
   width:75%;
 }
 
+.grade {
+  font-family: princessHeader;
+  font-size: 10em;
+  height: 200px;
+}
 
+.grade p {
+  margin: 50px auto;
+  text-align: center;
+  width: 20%;
+  height: 200px;
+  width: 200px;
+  line-height: 200px;
 
+  background-color: white;
+  background-size: 200px 200px;
+}
 .result #next-card:hover {
   color: #F55C7F ;
 }
 
 body {
   /*background-color: #C8C8A9;*/
+  border-top: 10px solid #FF8C94;
   font-family: princessFont;
   background-image: url('../pattern.png');
 }
 
 .result p {
   font-size: 1.5em;
-  background-color: #DCEDC2;
+  background-color: #FFE2E4;
   border: 4px solid #FF8C94;
   text-align: center;
   margin: auto;
   width: 500px;
   /*outline: 1px solid black;*/
   border-radius: 3px;
+  color: #FF8C94;
 }
 
 .round_progress {
   text-align: right;
+  font-size: 2em;
+  color: #FF8C94;
+  margin-top: 30px;
+/*   text-shadow:   -2px -2px 0 #FF8C94,
+    2px -2px 0 #FF8C94,
+    -2px 2px 0 #FF8C94,
+    2px 2px 0 #FF8C94;*/
+}
+
+.round_progress p {
+  margin: 0;
 }
 
 .result a {
@@ -58,36 +103,81 @@ body {
   margin: 30px auto;
 }
 
-@font-face
-{
+@font-face {
   font-family: princessFont;
   src: url('PrincessAllie 5.ttf');
-/*  font-family: princessHeader;
-  src: url('Royaltea.ttf');*/
+}
 
+@font-face {
+  font-family: princessHeader;
+  src: url('Royaltea.ttf');
 }
 
 
 .header {
   text-align: center;
-  background-color: #FFAAA6;
+  background-color: #A8E6CE;
   padding-top: 10px;
   border-bottom: 10px solid #FF8C94;
+  height: 130px;
 }
 
 .errors {
 
 }
 
-.header h2{
+.deck_name {
+  text-align: center;
+  margin: 20px auto;
+  color: #FF8C94;
+  background-color: #FFE2E4;
+  border-radius: 3px;
+  border: 4px solid #FF8C94;
+  width: 500px;
+}
+
+#current-user {
+  position: absolute;
   display: block;
-  margin: auto;
+  top: 0;
+  right:20px;
+  padding: 5px;
+  border-radius: 3px;
+  background-color: #FFE2E4;
+  border: 2px solid #FF8C94;
+  font-size: 1.2em;
+  color: #FF8C94;
+}
+
+.header h2{
+  display: inline-block;
+  margin: 6px auto;
+  height: 100px;
+  line-height: 100px;
   font-size: 4em;
-  color: #FFAAA6;
+  color: #ffe2e4;
   background-color: #FF8C94;
   width: 60%;
   border-radius: 3px;
-  border: 3px solid #FFD3B5;
+  border: 4px solid #ffe2e4;
+  /*box-shadow: 5px 5px 20px #FF8C94;*/
+  font-family: princessHeader;
+ /* text-shadow:   -2px -2px 0 #FF8C94,
+    2px -2px 0 #FF8C94,
+    -2px 2px 0 #FF8C94,
+    2px 2px 0 #FF8C94;*/
+}
+
+.header a {
+  text-decoration: none;
+}
+
+#princess {
+  background-image: url('../princess.png');
+  height: 50px;
+  width: 40px;
+  background-size: 40px 50px;
+  display: inline-block;
 }
 
 input {
