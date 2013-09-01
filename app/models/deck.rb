@@ -32,4 +32,12 @@ class Deck < ActiveRecord::Base
     end
   end
 
+  def self.create_deck(deck_info)
+    deck = Deck.create(:name => deck_info[:name])
+
+    CSV.foreach(deck_info[:file_name], :headers => true) do |row|
+      deck.cards << Card.create!(:answer => row["word"], :question => row["definition"])
+    end
+  end
+
 end
