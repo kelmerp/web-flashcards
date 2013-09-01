@@ -4,7 +4,7 @@ class Guess < ActiveRecord::Base
 
   def self.get_correct_response
     correct_responses = ["Wow, that's beautiful!","Super duper job!","You're so smart!","Yeah, way to go!",
-      "You're such a gem!","You are a beautiful princess!","Oh joy!","Congratulations Princess, you got it!"
+      "You're such a gem!","You are a beautiful princess!","Oh joy!","Congratulations Princess, you got it!",
       "Oh happy day!"]
     correct_responses.sample  
   end
