@@ -312,7 +312,7 @@ input {
   z-index: 1;
   background-image: url('../princess_notecard.png');
   background-size: 500px 300px;
-  color: black;
+  color: #FF8C94;
   cursor: pointer;
   border: 2px solid black;
   box-shadow: 10px 10px 5px #888888;
@@ -320,8 +320,8 @@ input {
 }
 .flip .card .back {
   -webkit-transform: rotatex(-180deg);
-  background: #fbb8db;
-  color: black;
+  background: #FFE2E4;
+  color: #FF8C94;
   cursor: pointer;
   line-height: 300px;
   border: 1px solid black;

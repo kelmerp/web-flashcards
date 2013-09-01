@@ -8,7 +8,7 @@
     <p><%=@correct_first_try%>/<%=@total_cards%> cards guessed correctly on the first try</p>
   </section>
   <section class="list">
-    <p>You you need to work on this shit:</p>
+    <p>You need to work on this shit:</p>
     <ul>
       <% @incorrect_cards.each do |card| %>
         <li><%= card.answer %> : <%= card.question %></li>
