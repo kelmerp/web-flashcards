@@ -5,10 +5,14 @@
       <a href="/user/edit/<%= current_user.id %>">edit profile</a>
       <a href="/deck/new">create new deck</a>
     </div>  <!-- user-stats -->
-    <h3>Pick a deck you'd like to play!</h3>
-    <% @decks.each do |deck| %>
-      <a href="/round/deck/<%= deck.id %>/begin"><%= deck.name %></a>
-    <% end %>
+    <div class="user-options">
+      <h3>Pick a deck you'd like to play!</h3>
+      <div>
+        <% @decks.each do |deck| %>
+          <a href="/round/deck/<%= deck.id %>/begin"><%= deck.name %></a>
+        <% end %>
+      </div> 
+    </div>
     <table>
       <tr>
         <th>Deck Name</th>
@@ -26,5 +30,8 @@
       </tr>
       <% end %>
     </table>
+    <% if current_user.rounds.empty? %>
+      <p class="nogames">You haven't played any games yet princess!</p>
+    <% end %>
   </div>  <!-- user -->
 </div>

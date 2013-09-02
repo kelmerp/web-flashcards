@@ -14,4 +14,8 @@ $(document).ready(function() {
     $(this).find('.card').toggleClass('flipped');
     return false;
   });
+
+  $('.music a').click(function() {
+    $('.music a').replaceWith('<a href="">Music: OFF</a>');;
+  });
 });

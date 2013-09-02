@@ -8,11 +8,15 @@
     <p><%=@correct_first_try%>/<%=@total_cards%> cards guessed correctly on the first try</p>
   </section>
   <section class="list">
-    <p>You need to work on this shit:</p>
-    <ul>
-      <% @incorrect_cards.each do |card| %>
-        <li><%= card.answer %> : <%= card.question %></li>
-      <% end %>
+    <% if @correct_first_try/@total_cards != 1 %>
+      <p>You need to work on this shit:</p>
+      <ul>
+        <% @incorrect_cards.each do |card| %>
+          <li><%= card.answer %> : <%= card.question %></li>
+        <% end %>
     </ul>
+    <% else %>
+      <p id="allcorrect">You're so smart! You didn't miss any guesses!</p>
+    <% end %>
   </section>
 </div>
